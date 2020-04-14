@@ -2,9 +2,7 @@
   <v-card>
     <v-snackbar v-model="snackbar" :color="color.snackbar" top="top">
       {{ message }}
-      <v-btn dark text @click="snackbar = false">
-        Close
-      </v-btn>
+      <v-btn dark text @click="snackbar = false">Close</v-btn>
     </v-snackbar>
     <v-dialog v-model="dialog.Edit" persistent max-width="600px">
       <v-card>
@@ -15,6 +13,19 @@
         <v-card-text>
           <v-container>
             <v-row>
+              <v-col cols="12" sm="6">
+                <v-text-field v-model="ComUserNama" label="Nama User"></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-text-field v-model="DetailMitra.nomor_hp" label="*No. Handphone" disabled></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-text-field v-model="ComUserWA" label="*No. Whatsapp"></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6">
+                <v-text-field v-model="ComUserDesc" label="Deskripsi"></v-text-field>
+              </v-col>
+
               <v-col cols="12" sm="6">
                 <v-select
                   :items="UserStatus"
@@ -36,41 +47,14 @@
                   required
                 ></v-select>
               </v-col>
-              <v-col cols="12" sm="6">
-                <v-text-field
-                  v-model="ComUserWA"
-                  label="No. Whatsapp"
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-text-field
-                  v-model="ComUserNama"
-                  label="Nama User"
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-text-field
-                  v-model="ComUserDesc"
-                  label="Deskripsi"
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-text-field
-                  v-model="DetailMitra.nomor_hp"
-                  label="No. Handphone"
-                  disabled
-                ></v-text-field>
-              </v-col>
             </v-row>
           </v-container>
           <small>*indicates required field</small>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog.Edit = false"
-            >Close</v-btn
-          >
-          <v-btn color="blue darken-1" text @click="UpdateMitra">Update</v-btn>
+          <v-btn color="red darken-1" dark @click="dialog.Edit = false">Close</v-btn>
+          <v-btn color="blue darken-1" dark @click="UpdateMitra">Update</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -90,7 +74,7 @@
                   class="ma-2"
                   label="Head Office"
                 ></v-switch>
-              </v-col> -->
+              </v-col>-->
               <v-col cols="12">
                 <v-text-field
                   v-if="DetailMitra.nama_ho"
@@ -103,7 +87,7 @@
                   v-else
                   :items="ListHO.data"
                   v-model="selected_HO"
-                  label="Pilih Head Office"
+                  label="*Pilih Head Office"
                   item-text="nama"
                   item-value="id"
                   required
@@ -115,20 +99,16 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog.AddHO = false"
-            >Close</v-btn
-          >
+          <v-btn color="blue darken-1" text @click="dialog.AddHO = false">Close</v-btn>
 
           <v-btn
-            color="blue darken-1"
+            color="red darken-1"
+            dark
             v-if="DetailMitra.nama_ho"
             text
             @click="DeleteHO"
-            >Hapus HO</v-btn
-          >
-          <v-btn color="blue darken-1" v-else text @click="JoinHO"
-            >Tambah HO</v-btn
-          >
+          >Hapus HO</v-btn>
+          <v-btn color="blue darken-1" dark v-else text @click="JoinHO">Tambah HO</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -146,7 +126,7 @@
                 <v-autocomplete
                   :items="UserType"
                   v-model="ComUserType"
-                  label="Pilih Type User"
+                  label="*Pilih Type User"
                   item-text="type"
                   item-value="id"
                   required
@@ -158,9 +138,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog.AddMOU = false"
-            >Close</v-btn
-          >
+          <v-btn color="blue darken-1" text @click="dialog.AddMOU = false">Close</v-btn>
 
           <v-btn color="blue darken-1" text @click="UpdateMou">Update</v-btn>
         </v-card-actions>
@@ -168,8 +146,8 @@
     </v-dialog>
 
     <v-row>
-      <v-col cols="12" sm="6"
-        ><v-text-field
+      <v-col cols="12" sm="6">
+        <v-text-field
           solo
           label="Search"
           clearable
@@ -200,12 +178,7 @@
       :onAddMOU="GetUserTypeMitra"
     />
     <div class="text-center pt-2">
-      <v-pagination
-        v-model="page"
-        @input="GetListMitra()"
-        :length="lengthPage"
-        :total-visible="7"
-      ></v-pagination>
+      <v-pagination v-model="page" @input="GetListMitra()" :length="lengthPage" :total-visible="7"></v-pagination>
     </div>
   </v-card>
 </template>
