@@ -58,12 +58,12 @@ export default {
         children: [
           {
             icon: 'mdi-cash-usd',
-            text: 'Beli Tiket',
+            text: 'Pembelian Tiket',
             title: 'pembelian_tiket'
           },
           {
             icon: 'mdi-history',
-            text: 'Refund Tiket',
+            text: 'Pengembalian Tiket',
             title: 'pengembalian_tiket'
           }
         ]

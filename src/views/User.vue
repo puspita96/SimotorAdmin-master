@@ -138,9 +138,9 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog.AddMOU = false">Close</v-btn>
+          <v-btn color="red darken-1" dark @click="dialog.AddMOU = false">Close</v-btn>
 
-          <v-btn color="blue darken-1" text @click="UpdateMou">Update</v-btn>
+          <v-btn color="blue darken-1" dark @click="UpdateMou">Update</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -205,7 +205,6 @@ export default {
       UserType: [],
       addHO: false,
       dialog: { Edit: false, AddHO: false, AddMOU: false },
-
       units: [],
       ListMitra: [],
       ListHO: [],
@@ -439,7 +438,6 @@ export default {
 
     async UpdateMou() {
       let formData2 = new FormData();
-
       formData2.append('id_app_user', this.MitraInfo.id);
       formData2.append('id_biz_user', this.users.id);
       formData2.append('id_mst_user_type', this.ComUserType.id);
