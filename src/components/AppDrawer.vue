@@ -23,7 +23,12 @@
             <v-list-item-title>{{ item.text }}</v-list-item-title>
           </v-list-item-content>
         </template>
-        <v-list-item v-for="child in item.children" :key="child.title" link :to="child.title">
+        <v-list-item
+          v-for="child in item.children"
+          :key="child.title"
+          link
+          :to="child.title"
+        >
           <v-list-item-action v-if="child.icon">
             <v-icon>{{ child.icon }}</v-icon>
           </v-list-item-action>
@@ -69,8 +74,8 @@ export default {
         ]
       },
       { icon: 'mdi-motorbike', text: 'Moderasi', title: 'moderasi' },
-      { icon: 'mdi-account', text: 'User', title: 'user' },
-      { icon: 'mdi-account', text: 'Database User', title: 'db-mitra' }
+      { icon: 'mdi-account', text: 'User', title: 'user' }
+      // { icon: 'mdi-account', text: 'Database User', title: 'db-mitra' }
 
       // { icon: "mdi-settings", text: "Settings" },
       // { icon: "mdi-message", text: "Send feedback" },
