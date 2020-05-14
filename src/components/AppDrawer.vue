@@ -69,7 +69,8 @@ export default {
         ]
       },
       { icon: 'mdi-motorbike', text: 'Moderasi', title: 'moderasi' },
-      { icon: 'mdi-account', text: 'User', title: 'user' }
+      { icon: 'mdi-account', text: 'User', title: 'user' },
+      { icon: 'mdi-account', text: 'Database User', title: 'db-mitra' }
 
       // { icon: "mdi-settings", text: "Settings" },
       // { icon: "mdi-message", text: "Send feedback" },

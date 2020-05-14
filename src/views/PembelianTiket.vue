@@ -7,7 +7,7 @@
 
     <v-dialog v-model="dialog.Detail" persistent fullscreen hide-overlay>
       <v-card>
-        <v-toolbar dark color="teal darken-3">
+        <v-toolbar>
           <v-toolbar-title>Detail Pembelian</v-toolbar-title>
           <div class="flex-grow-1"></div>
           <v-btn icon @click="dialog.Detail = false">

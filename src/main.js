@@ -13,7 +13,7 @@ Vue.use(Viewer);
 Vue.config.productionTip = false;
 
 const defaultOptions = {
-  baseURL: 'http://116.197.129.222',
+  baseURL: 'http://116.197.129.222/',
   timeout: 0,
   headers: {
     // 'Content-Type': 'application/json',

@@ -66,7 +66,7 @@
     <v-row>
       <v-col cols="12" md="6">
         <v-card class="mx-auto">
-          <v-subheader style="color:#F44336">Total Transaksi</v-subheader>
+          <v-subheader>Total Transaksi</v-subheader>
           <v-list dense height="200" class="overflow-y-auto">
             <v-list-item-group color="primary">
               <v-list-item v-for="(item, i) in Statistik.Transaksi" :key="i">
@@ -83,7 +83,7 @@
       </v-col>
       <v-col cols="12" md="6">
         <v-card class="mx-auto">
-          <v-subheader style="color:blue">Total Unit</v-subheader>
+          <v-subheader>Total Unit</v-subheader>
           <v-list dense height="200" class="overflow-y-auto">
             <v-list-item-group color="primary">
               <v-list-item v-for="(item, i) in Statistik.Unit" :key="i">

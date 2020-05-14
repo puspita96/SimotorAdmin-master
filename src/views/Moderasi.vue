@@ -6,7 +6,7 @@
     </v-snackbar>
     <v-dialog v-model="dialog.Detail" persistent fullscreen hide-overlay>
       <v-card>
-        <v-toolbar dark color="teal darken-3">
+        <v-toolbar>
           <v-toolbar-title>Detail Unit</v-toolbar-title>
           <div class="flex-grow-1"></div>
           <v-btn icon @click="dialog.Detail = false">
@@ -346,7 +346,7 @@
       label="Search"
       clearable
       prepend-inner-icon="search"
-      @keyup.enter="doSeach"
+      @keyup.enter="doSearch"
       @click:clear="doClear"
       v-model="search"
     ></v-text-field>
@@ -471,7 +471,7 @@ export default {
       this.GetUnitProsesModerasi();
       this.GetUnitModerasiDitolak();
     },
-    doSeach() {
+    doSearch() {
       this.GetUnitTersedia();
       this.GetUnitProsesModerasi();
       this.GetUnitModerasiDitolak();

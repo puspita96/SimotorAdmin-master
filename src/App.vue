@@ -13,7 +13,7 @@
       v-if="check !== '/'"
       :clipped-left="$vuetify.breakpoint.lgAndUp"
       app
-      color="teal"
+      color="white"
       elevation="5"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />

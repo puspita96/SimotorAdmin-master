@@ -11,61 +11,48 @@
             <v-list-item-avatar color="grey"></v-list-item-avatar>
             <v-list-item-content>
               <v-list-item-title>{{ item.nama_pembeli }}</v-list-item-title>
-              <v-list-item-subtitle
-                >No.Order: {{ item.no_order }}</v-list-item-subtitle
-              >
+              <v-list-item-subtitle>No.Order: {{ item.no_order }}</v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
-              <v-list-item-action-text
-                v-text="item.id"
-              ></v-list-item-action-text>
-              <v-list-item-action-text
-                v-if="!item.type_user_pembeli == 'Premium'"
-                ><span style="color: red">
-                  {{ item.type_user_pembeli }}</span
-                ></v-list-item-action-text
-              >
-              <v-list-item-action-text v-else
-                ><span style="color: teal">
-                  {{ item.type_user_pembeli }}</span
-                ></v-list-item-action-text
-              >
+              <v-list-item-action-text v-text="item.id"></v-list-item-action-text>
+              <v-list-item-action-text v-if="!item.type_user_pembeli == 'Premium'">
+                <span style="color: red">{{ item.type_user_pembeli }}</span>
+              </v-list-item-action-text>
+              <v-list-item-action-text v-else>
+                <span style="color: teal">{{ item.type_user_pembeli }}</span>
+              </v-list-item-action-text>
             </v-list-item-action>
           </v-list-item>
 
           <v-list-item>
             <v-list-item-content>
-              <v-list-item-subtitle
-                >Jumlah: {{ item.jumlah }} x
-                <span style="color: #EF5350"
-                  >Rp {{ item.harga }}</span
-                ></v-list-item-subtitle
-              >
-              <v-list-item-subtitle
-                >Total Pembayaran :
-                <span style="color: #EF5350"
-                  >Rp {{ item.total_pembayaran }}</span
-                ></v-list-item-subtitle
-              >
-              <v-list-item-subtitle
-                >Tanggal :
-                {{ item.CreatedAt | dateTimeFormat }}</v-list-item-subtitle
-              >
+              <v-list-item-subtitle>
+                Jumlah: {{ item.jumlah }} x
+                <span style="color: #EF5350">Rp {{ item.harga }}</span>
+              </v-list-item-subtitle>
+              <v-list-item-subtitle>
+                Total Pembayaran :
+                <span style="color: #EF5350">Rp {{ item.total_pembayaran }}</span>
+              </v-list-item-subtitle>
+              <v-list-item-subtitle>
+                Tanggal :
+                {{ item.created_at | dateTimeFormat }}
+              </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
           <v-card-actions>
             <!-- <v-btn text color="deep-purple accent-4">
               Lihat
-            </v-btn> -->
+            </v-btn>-->
 
             <!-- <v-btn text color="deep-purple accent-4">
                 Bookmark
-              </v-btn> -->
+            </v-btn>-->
             <v-spacer></v-spacer>
             <!-- <v-btn icon>
               <v-icon>mdi-heart</v-icon>
-            </v-btn> -->
+            </v-btn>-->
             <v-btn icon @click="onDetail(item.id)">
               <v-icon>mdi-grease-pencil</v-icon>
             </v-btn>

@@ -84,6 +84,16 @@ const routes = [
 
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/PengembalianTiket.vue')
+  },
+  {
+    path: '/db-mitra',
+    name: 'db-mitra',
+    meta: {
+      requiresAuth: true
+    },
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/DBMitra.vue')
   }
 ];
 

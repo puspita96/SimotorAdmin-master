@@ -5,7 +5,7 @@
     <v-row fill-height align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
         <v-card class="elevation-12">
-          <v-toolbar color="white" dark flat>
+          <v-toolbar color="white" flat>
             <v-toolbar-title align="center" justify="center">Login</v-toolbar-title>
             <v-spacer />
           </v-toolbar>
